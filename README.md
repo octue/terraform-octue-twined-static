@@ -2,14 +2,14 @@
 A Terraform module for deploying the core storage and IAM resources for an Octue Twined services network to google cloud.  
 
 > [!IMPORTANT]
-> Deploying this Terraform module is a prerequisite to deploying the [terraform-octue-twined-cluster](https://github.com/octue/terraform-octue-twined-cluster)
-> module. You must deploy both to have a cloud-based Octue Twined services network. See [a live example here](https://github.com/octue/twined-infrastructure).
+> To deploy an Octue Twined services network, you need two terraform modules. This module ("core") provides infrastructure for
+> storing data and code. The [other ("cluster")](https://github.com/octue/terraform-octue-twined-cluster) provides a job queue
+> and compute resources (a kubernetes cluster) for running analyses.
+> A complete example using both modules can be found [here](https://github.com/octue/twined-infrastructure).
 
 > [!TIP]
-> Deploy this module in a separate Terraform configuration (directory/workspace) to the [terraform-octue-twined-cluster](https://github.com/octue/terraform-octue-twined-cluster)
-> module. This allows the option to spin down the Kubernetes cluster provided by the other module while keeping the core
-> resources that contain all data produced by your Twined services available. Spinning the cluster down entirely can 
-> save on running costs in periods of extended non-use while keeping all data available.
+> Having the cluster in a separate module allows you to destroy it whilst keeping previously stored results.
+> This saves on running costs in periods of extended non-use (keeping a minimal cluster ready to run analyses costs c.$30/month).
 
 # Infrastructure
 These resources are automatically deployed:
