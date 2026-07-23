@@ -23,6 +23,13 @@ variable "maintainer_service_account_names" {
 }
 
 
+variable "maximum_service_registry_instances" {
+  type        = number
+  default     = 10
+  description = "The maximum number of instances to allow to be spun up simultaneously for the service registry. Each instance can handle one request at a time."
+}
+
+
 variable "deletion_protection" {
   type        = bool
   default     = true
