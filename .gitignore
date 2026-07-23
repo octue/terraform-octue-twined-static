@@ -1,3 +1,13 @@
+# Cloud function source archives built by the `archive_file` data sources
+*_source.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.coverage
+htmlcov/
+
 # Local .terraform directories
 **/.terraform/*
 
@@ -37,3 +47,6 @@ override.tf.json
 terraform.rc
 
 .idea
+
+# Terraform provider lock file (not committed for reusable modules)
+.terraform.lock.hcl
